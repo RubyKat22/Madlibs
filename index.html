@@ -1,0 +1,47 @@
+<h1>Mad Libs</h1>
+ 
+<form id="myFrom">
+  <label for="noun">Noun</label><br>
+  <input type="text" id="noun" name="noun"><br><br>
+ 
+  <label for="choosething">Choose one:</label><br>
+  <select id="choosething">
+      <option value="SCISSORS">Scissors</option>
+      <option value="DECORATE">Decorate</option>
+      <option value="REACH">Reach</option>
+      <option value="LUCKY">Lucky</option>
+      <option value="HISS">Hiss</option>
+  </select>
+  <br>
+  <label for="verb">verb</label><br>
+  <input type="text" id="verb" name="verb"><br><br>
+
+  <br>
+  <label for="pet">Choose one</label>
+  <input type="radio" id="pet1" name="pet" value="Tiger">
+  <label for="pet1">Tiger</label>
+  <input type="radio" id="pet2" name="pet" value="Duck">
+  <label for="pet2">Duck</label>
+  <br>
+  
+  
+  <br>
+  <input type="submit" value="Submit">
+</form>
+<div id="formContentsHere"></div>
+<script>
+    var form=document.getElementById("myFrom")
+    form.addEventListener("submit", function(event){
+    event.preventDefault();
+    var noun=document.getElementById("noun").value;
+    var verb=document.getElementById("verb").value;
+    var choosething=document.getElementById("choosething").value;
+    var pet=document.querySelector('input[name="pet"]:checked').value;
+    
+    var formContents=document.getElementById("formContentsHere");
+    formContents.innerHTML = "Your name is " + noun +" and you start  "+ verb + "  BUT as you are " + verb + " you shout out " + choosething + " which alerted your pet " + pet + " which you start to ride in to the sunset";
+
+    
+        
+    });
+</script>
